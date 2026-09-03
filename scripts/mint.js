@@ -1,6 +1,7 @@
-const { ethers } = require("hardhat");
+import hre from "hardhat";
 
 async function main() {
+  const { ethers } = await hre.network.create();
   const address = process.env.NFT_ADDRESS;
   if (!address) throw new Error("NFT_ADDRESS is required in .env");
 
